@@ -1,0 +1,5 @@
+{"data":{
+    "nodes": [{"name" : "A"}, {"name": "B"}, {"name": "C"}, {"name": "D"}],
+    "links" :[{"source": "A", "target": "B"},{"source": "B", "target": "C"},{"source": "A", "target": "D"}]
+}
+  }
