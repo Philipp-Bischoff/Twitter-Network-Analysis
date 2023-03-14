@@ -1,3 +1,11 @@
+# I. Introduction
+
+I started this project as a way to get experience integrating and experience creating a front-end framework, an API, and a back-end framework to allow data to be sent back and forth.
+
+I chose to create a dashboard that allows the user to visually investigate networks of twitter-user interactions concerning a specific hashtag. 
+
+(ADD Example picture).
+
 
 The front-end was created in **React+ Typescript**  the API was created in **Flask** and the back-end houses a **Python** Script that connects to the Twitter API Endpoints through the Tweepy Module.
 
