@@ -1,4 +1,4 @@
-# I. Introduction
+# Dashboard for Visualizing Social Media User Connections
 
 I started this project as a way to get experience integrating and experience creating a front-end framework, an API, and a back-end framework to allow data to be sent back and forth.
 
