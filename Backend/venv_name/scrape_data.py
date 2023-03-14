@@ -6,7 +6,7 @@ import os
 import pandas as pd
 import tweepy
 import json
-import server
+import app
 from dotenv import load_dotenv
 
 increment_counter = 1
