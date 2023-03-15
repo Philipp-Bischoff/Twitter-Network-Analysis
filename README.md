@@ -26,7 +26,7 @@ The python script then:
 - creates a dataframe that stores each tweet's information
 - acceses tweepy's  <a href = "https://docs.tweepy.org/en/v3.5.0/cursor_tutorial.html"> cursor object</a>
 - loop through the tweets and record 
---screen name
+⋅⋅*screen name
 --user id
 --user mentioned
 --user retweeted
