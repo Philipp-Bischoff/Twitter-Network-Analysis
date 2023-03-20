@@ -226,7 +226,7 @@ class  Update(Resource):
 
 The following demonstrates searching for the "F1" hashtag on the day of the Jeddah Corniche Circuit event.
 
-![alt-text](https://github.com/Philipp-Bischoff/Twitter-Network-Analysis/blob/main/Frontend/F1-Example.gif)
+https://user-images.githubusercontent.com/47418990/226273753-b2511f21-ad29-4f80-b0f5-9ca02c4ea2fb.mov
 
 The "F1" hasthag is a good demonstration of the idea behind the project. It clearly shows that most users found in the sample interact with the official Formula One account. 
 
