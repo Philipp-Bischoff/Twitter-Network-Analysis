@@ -2,7 +2,6 @@ import pandas as pd
 import json
 
 
-
 def convertData(data):
     df = data
 
@@ -26,7 +25,7 @@ def convertData(data):
             "val": 1
         }
 
-        #add node to list 
+        #add node to list
         return_data['nodes'].append(NewNode)
 
         #Does it have a retweet?
@@ -50,7 +49,7 @@ def convertData(data):
                 'color': "#c42626"
             })
 
-        #Does it have a mention
+        #Does it have a mention?
         if (row['user_mention_screen_name']):
 
             TargetNode = {
@@ -68,7 +67,7 @@ def convertData(data):
                 'color': "#23FF00"
             })
 
-        #Does it have a reply
+        #Does it have a reply?
         if ((row['user_reply_to_id'])):
 
             TargetNode = {
