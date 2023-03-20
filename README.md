@@ -4,6 +4,8 @@ I started this project as a way to get experience integrating and experience cre
 
 I chose to create a dashboard that allows the user to visually investigate networks of twitter-user interactions concerning a specific hashtag. 
 
+The idea behind the project came from more of a social science perspective. I wanted to create a prototype for an application that could allow researchers to visualize interaction within social media platforms. For better or worse, social media companies provide a marketplace in which information and dis-information is spread by accident as well as by actors with malicious intent. A visualization of these connections can make the investigation of what happens, who posts what and which users have what kind of influence more intuitive. 
+
 ![alt-text](https://github.com/Philipp-Bischoff/Twitter-Network-Analysis/blob/main/Frontend/hashtag-monitor/src/Example.gif)
 
 The front-end was created in **React+ Typescript**  the API was created in **Flask** and the back-end houses a **Python** Script that connects to the Twitter API Endpoints through the Tweepy Module.
@@ -14,7 +16,7 @@ The visualization is done through Vasco Asturiano's amazing <a href="https://git
 # II. Project Description
 The main part of the application runs in the backend. 
 
-The user supplies the following infroamtion through a form in the frontend
+The user supplies the following information through a form in the frontend
 
 - the specific hashtag
 - the amount of tweets to be found 
@@ -37,12 +39,12 @@ The python script then:
 
 
 
-At this point we have gathered the information from the Twitter Endpoint and can start creating the network connections.
+At this point we have gathered the information from the Twitter endpoint and can start creating the network connections.
 
 This is done by:
 
 - cleaning the data set
-- creating lists for the nodes and links
+- creating an object containing two lists for nodes and links respectively
 - iterating through the data frame and finding and recording nodes, connections and the type of connection (reply, mention, retweet)
 
 The data is now transformed according to the frontend visualization tool's JSON template and returned to the front-end through the API.
@@ -76,7 +78,7 @@ The data is now transformed according to the frontend visualization tool's JSON 
 
 ## Frontend
 
-Main function of the frontend is to take in the user input, validate the  values, sent API-Requests, and display the returned values.
+The main function of the frontend is to take in the user input, validate the values, send API-Requests, and display the returned values as a network graph.
 
 The input settings are defined as:
 
@@ -94,7 +96,7 @@ export  type  Settings = {
 
 The checks therefore consist of checking if the ```hashtag``` is a string and not empty, if the ```tweetAmount``` is between 1 and 1500 (API Limit) and if the ```dateSince``` matches the RegEx that only allows for the date-format YYYY-MM-DD (API specific) to be valid.
 
-Once the input is validified we're creating an API request
+Once the input is validified we're creating the following API request
 
 ```typescript
 
@@ -140,14 +142,14 @@ const  handlePoolingRequest = () => {
 }
 ```
 
-And displaying the corresponding status overimposed on the app by rednering it like.
+And displaying the corresponding status overimposed on the app by rednering it in the following switch statement
 
 ```typescript
 const  renderUpdateSwitch = (param:String) => {
 
 	switch(param) {
 
-		case  "Scraping Data\n":
+		case  "Scraping Data":
 
 			return  <div>{update.status} - ({update.current_tweet} out of {filterSettings.tweetAmount} Tweets)</div>;
 
@@ -197,11 +199,11 @@ export  interface  NetworkData {
 
 ```
 
-A succesfull response from the original API Call is then transformed into JSON and saved in data strcuture with the format above.
+A succesfull response from the initial API call is then transformed into JSON and saved in data strcuture with the format above.
 
 ## Backend
 
-Our POST-ENDPOINT in the Flask API accepts the settings the user put into the form and sends these to a scraping module. Here we create, authorize the TwitterAPI connection, create a dataframe for the specific request and consequently send a request to the Twitter API. The returned data frame is then iterated and used to fill the data frame.
+Our POST-ENDPOINT in the Flask API accepts the settings the user put into the form and sends these to a scraping module. Here we authorize the TwitterAPI connection, create a dataframe for the specific request and consequently send a request to the Twitter API. The returned data is then iterated and used to fill the data frame.
 
 This dataframe is then cleaned and reformatted to be send back to the frontend.
 
@@ -222,10 +224,13 @@ class  Update(Resource):
 
 # IV. Demonstration
 
+The following demonstrates searching for the "F1" hashtag on the day of the Jeddah Corniche Circuit event.
 
+![alt-text](https://github.com/Philipp-Bischoff/Twitter-Network-Analysis/blob/main/Frontend/F1-Example.gif)
 
+The "F1" hasthag is a good demonstration of the idea behind the project. It clearly shows that most users found in the sample interact with the official Formula One account. 
 
-# V. Impact
 
 # VI. Conclusion
 
+I liked the minimum viable product that resulted from this project, it gave me valuable insights into structuring data with TypeScript, how to send data back and forth and how to connect to external APIs. The limitations, as always, are essentially in it's computational ability and the bottleneck to the API access. To actually get relevant information for a scientific inquiry, one would have to scrape much more data. This is either coupled with paying for elevated API priviliges or finding out a way to scrape them from the website directly. Nonetheless, I think the concept I created holds merit in the investigation to what is happening between online actors.
