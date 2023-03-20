@@ -4,7 +4,7 @@ I started this project as a way to get experience integrating and experience cre
 
 I chose to create a dashboard that allows the user to visually investigate networks of twitter-user interactions concerning a specific hashtag. 
 
-![Screenshot 2023-03-14 at 16 51 59](https://user-images.githubusercontent.com/47418990/225060892-42571e31-6fea-4e44-bfa2-49cbe4601a19.png)
+![alt-text](https://github.com/Philipp-Bischoff/Twitter-Network-Analysis/blob/main/Frontend/hashtag-monitor/src/Example.gif)
 
 The front-end was created in **React+ Typescript**  the API was created in **Flask** and the back-end houses a **Python** Script that connects to the Twitter API Endpoints through the Tweepy Module.
 
