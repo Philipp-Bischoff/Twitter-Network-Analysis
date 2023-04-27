@@ -6,7 +6,8 @@ I chose to create a dashboard that allows the user to visually investigate netwo
 
 The idea behind the project came from more of a social science perspective. I wanted to create a prototype for an application that could allow researchers to visualize interaction within social media platforms. For better or worse, social media companies provide a marketplace in which information and dis-information is spread by accident as well as by actors with malicious intent. A visualization of these connections can make the investigation of what happens, who posts what and which users have what kind of influence more intuitive. 
 
-![alt-text](https://github.com/Philipp-Bischoff/Twitter-Network-Analysis/blob/main/Frontend/hashtag-monitor/src/Example.gif)
+https://user-images.githubusercontent.com/47418990/226273753-b2511f21-ad29-4f80-b0f5-9ca02c4ea2fb.mov
+
 
 The front-end was created in **React+ Typescript**  the API was created in **Flask** and the back-end houses a **Python** Script that connects to the Twitter API Endpoints through the Tweepy Module.
 
